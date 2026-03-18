@@ -1,0 +1,19 @@
+data:
+  ticker: "SPY"
+  start_date: "2010-01-01"
+  end_date: "2024-12-31"
+  features_window: 20
+
+regime:
+  n_states: 4
+  n_iter: 200
+  random_state: 42
+  covariance_type: "full"
+
+portfolio:
+  rebalance_freq: "W-FRI"   # weekly, every Friday
+  max_position: 0.25        # max 25% per strategy
+
+live:
+  paper_trading: true
+  alpaca_base_url: "https://paper-api.alpaca.markets"
