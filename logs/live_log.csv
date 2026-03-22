@@ -1,0 +1,2 @@
+date,regime_label,prob_bull,prob_choppy,prob_high_vol,prob_crisis,w_momentum,w_mean_rev,w_trend,w_defensive,etf_QQQ,etf_SPY,etf_BIL,portfolio_value
+2026-03-21,crisis,0.0,0.0,0.0,1.0,0.0769,0.0769,0.1538,0.6923,0.2308,0.0769,0.6923,100000.0

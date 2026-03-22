@@ -194,20 +194,19 @@ class RegimeClassifier:
     # ── SAVE / LOAD ─────────────────────────────────────────────────
 
     def save(self, path: Path = MODEL_PATH):
-        """Pickle the trained classifier so you don't retrain every run."""
+        """Save the trained classifier using joblib (pickle-safe)."""
+        import joblib
         path.parent.mkdir(exist_ok=True)
-        with open(path, "wb") as f:
-            pickle.dump(self, f)
+        joblib.dump(self, path)
         log.info(f"Model saved → {path}")
 
     @classmethod
     def load(cls, path: Path = MODEL_PATH) -> "RegimeClassifier":
-        """Load a previously saved classifier."""
-        with open(path, "rb") as f:
-            obj = pickle.load(f)
+        """Load a previously saved classifier using joblib."""
+        import joblib
+        obj = joblib.load(path)
         log.info(f"Model loaded ← {path}")
         return obj
-
 
 # ── Quick self-test ──────────────────────────────────────────────────
 if __name__ == "__main__":
